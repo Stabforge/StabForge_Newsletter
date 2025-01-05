@@ -12,7 +12,7 @@ pipeline {
             script {
                 try {
                     // Read the CSV file from the workspace
-                    def csvFile = readFile(file: 'StabforgeNewsletter.csv')
+                    def csvFile = readFile(file: 'EmailData.csv')
                     
                     // Split the file into lines (each row in the CSV)
                     def lines = csvFile.split('\n')
