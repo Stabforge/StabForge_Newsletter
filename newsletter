@@ -1,0 +1,201 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Performing build steps...'
+            }
+        }
+    }
+    post {
+        always {
+            script {
+                try {
+                    // Read the CSV file from the workspace
+                    def csvFile = readFile(file: 'StabforgeNewsletter.csv')
+                    
+                    // Split the file into lines (each row in the CSV)
+                    def lines = csvFile.split('\n')
+                    
+                    // Iterate over each line (row in the CSV)
+                    lines.each { line ->
+                        // Skip empty lines (if any)
+                        if (line.trim()) {
+                            // Split the line into columns by comma
+                            def columns = line.split(',')
+                            
+                            // Validate the CSV structure
+                            if (columns.size() >= 2) {
+                                def name = columns[0].trim()  // Assuming the name is in the first column
+                                def email = columns[1].trim()  // Assuming the email is in the second column
+                                
+                                // Log the recipient's name and email for debugging
+                                echo "Sending email to: ${name} <${email}>"
+                                
+                                // Send the email using the Email Extension plugin
+                                emailext(
+                                    to: email,
+                                    from: "noreply@stabforge.com",
+                                    subject: "STABForge Newsletter",
+                                    body: """
+                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STABForge Newsletter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 16px;
+        }
+        .content {
+            padding: 20px;
+            color: #333333;
+            line-height: 1.6;
+        }
+        .content h2 {
+            color: #0056b3;
+            font-size: 22px;
+        }
+        .content ul {
+            padding-left: 20px;
+        }
+        .content ul li {
+            margin-bottom: 10px;
+        }
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 25px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background-color: #003d80;
+        }
+        .footer {
+            background: #f1f1f1;
+            color: #666666;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+        }
+        .footer a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .content h2 {
+                font-size: 20px;
+            }
+            .button {
+                padding: 8px 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            .header p {
+                font-size: 14px;
+            }
+            .content h2 {
+                font-size: 18px;
+            }
+            .button {
+                padding: 6px 15px;
+                font-size: 14px;
+            }
+            .footer {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hi ${name}, Welcome to STABForge! </h1>
+            <p>Your hub for tech insights, trends, and updates</p>
+        </div>
+        <div class="content">
+            <h2>Featured Articles</h2>
+            <ul>
+                <li><strong>PowerShell Variables Mastery: 3 Proven Scripting Methods</strong> - Learn how to effectively use variables in PowerShell to enhance your scripting capabilities. <a href="https://stabforge.com/powershell-variables-mastery-3-proven-scripting-methods/">Read more</a></li>
+                <li><strong>A Beginner’s Guide to App Development in Flutter</strong> - Start your journey in app development with this comprehensive guide on Flutter. <a href="https://stabforge.com/a-beginners-guide-to-app-development-in-flutter/">Read more</a></li>
+                <li><strong>Beyond the Logo: Master the True Art of Branding with These 13 Transformative Steps</strong> - Discover the essential steps to create a compelling brand identity. <a href="https://stabforge.com/beyond-the-logo-master-the-true-art-of-branding-with-these-13-transformative-steps/">Read more</a></li>
+                <li><strong>Effortless PowerShell Script to Monitor Disk Space and Automatically Clean Up Files When Usage Exceeds 70%</strong> - Implement this PowerShell script to manage disk space efficiently. <a href="https://stabforge.com/effortless-powershell-script-to-monitor-disk-space-and-automatically-clean-up-files-when-usage-exceeds-70/">Read more</a></li>
+            </ul>
+            <a href="https://stabforge.com" class="button" style="color: white;">Explore More on STABForge</a>
+            <p>Are you a blogger? Join our community! <a href="https://stabforge.com/register/" style="color: #0056b3; font-weight: bold;">Register Here</a></p>
+        </div>
+        <div class="footer">
+            <p>STABForge.com (&copy; 2020)</p>
+            <p>Stay connected: 
+                <a href="https://www.linkedin.com/company/stabforge-tech-blog">LinkedIn</a>
+            </p>
+            <p><a href="https://stabforge.com/unsubscribe-newsletter/" style="color: #0056b3;">Unsubscribe</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
+                                    
+                                    """,
+                                    mimeType: 'text/html'
+                                )
+                            } else {
+                                echo "Skipping invalid row: ${line}"
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    echo "Error reading or processing the CSV file: ${e.message}"
+                }
+            }
+        }
+    }
+}
