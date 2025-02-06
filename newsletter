@@ -38,13 +38,21 @@ pipeline {
                                     from: "noreply@stabforge.com",
                                     subject: "STABForge Newsletter",
                                     body: """
-                                    <!DOCTYPE html>
+                                    
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STABForge Newsletter</title>
     <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto; /* Adds spacing and centers images */
+            border-radius: 5px; /* Optional: Adds rounded corners for aesthetics */
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -158,18 +166,23 @@ pipeline {
 <body>
     <div class="container">
         <div class="header">
-            <h1>Hi ${name}, Welcome to STABForge! </h1>
+            <h1>Hi ${name}, Welcome to STABForge!</h1>
             <p>Your hub for tech insights, trends, and updates</p>
         </div>
         <div class="content">
             <h2>Featured Articles</h2>
             <ul>
-                <li><strong>PowerShell Variables Mastery: 3 Proven Scripting Methods</strong> - Learn how to effectively use variables in PowerShell to enhance your scripting capabilities. <a href="https://stabforge.com/powershell-variables-mastery-3-proven-scripting-methods/">Read more</a></li>
-                <li><strong>A Beginner’s Guide to App Development in Flutter</strong> - Start your journey in app development with this comprehensive guide on Flutter. <a href="https://stabforge.com/a-beginners-guide-to-app-development-in-flutter/">Read more</a></li>
-                <li><strong>Beyond the Logo: Master the True Art of Branding with These 13 Transformative Steps</strong> - Discover the essential steps to create a compelling brand identity. <a href="https://stabforge.com/beyond-the-logo-master-the-true-art-of-branding-with-these-13-transformative-steps/">Read more</a></li>
-                <li><strong>Effortless PowerShell Script to Monitor Disk Space and Automatically Clean Up Files When Usage Exceeds 70%</strong> - Implement this PowerShell script to manage disk space efficiently. <a href="https://stabforge.com/effortless-powershell-script-to-monitor-disk-space-and-automatically-clean-up-files-when-usage-exceeds-70/">Read more</a></li>
+                <li><strong>Vertex AI: Supercharge Next-Gen App Development in 2025 Effortlessly</strong> - Discover how Vertex AI is revolutionizing app development with cutting-edge tools and frameworks. <a href="https://stabforge.com/vertex-ai-supercharge-next-gen-app-development-in-2025-effortlessly/">Read more</a></li>
+                <li><strong>Best AI Tools to Boost Productivity in 2025</strong> - Explore the top AI tools that can enhance your productivity and streamline workflows in the coming year. <a href="https://stabforge.com/best-ai-tools-to-boost-productivity-in-2025/">Read more</a></li>
+                <li><strong>Maven: The Effortless, Ultimate Guide for Java Developers in 2025</strong> - A comprehensive guide to mastering Maven for efficient Java development. <a href="https://stabforge.com/maven-the-effortless-ultimate-guide-for-java-developers-in-2025/">Read more</a></li>
+                <li><strong>Unlock the Power of Effective Communication: A 3-Step Roadmap to Success</strong> - Learn the essential steps to enhance your communication skills for personal and professional growth. <a href="https://stabforge.com/unlock-the-power-of-effective-communication-a-3-step-roadmap-to-success/">Read more</a></li>
             </ul>
+            <img src="1.png">
+          <img src="2.png">
+          <img src="3.png">
+          <img src="4.png">
             <a href="https://stabforge.com" class="button" style="color: white;">Explore More on STABForge</a>
+          
             <p>Are you a blogger? Join our community! <a href="https://stabforge.com/register/" style="color: #0056b3; font-weight: bold;">Register Here</a></p>
         </div>
         <div class="footer">
@@ -183,7 +196,6 @@ pipeline {
 </body>
 </html>
 
-                                    
                                     """,
                                     mimeType: 'text/html'
                                 )
