@@ -50,8 +50,8 @@ pipeline {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 10px auto; /* Adds spacing and centers images */
-            border-radius: 5px; /* Optional: Adds rounded corners for aesthetics */
+            margin: 10px auto;
+            border-radius: 5px;
         }
         body {
             font-family: Arial, sans-serif;
@@ -126,41 +126,6 @@ pipeline {
         .footer a:hover {
             text-decoration: underline;
         }
-
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .container {
-                margin: 10px;
-            }
-            .header h1 {
-                font-size: 24px;
-            }
-            .content h2 {
-                font-size: 20px;
-            }
-            .button {
-                padding: 8px 20px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .header h1 {
-                font-size: 20px;
-            }
-            .header p {
-                font-size: 14px;
-            }
-            .content h2 {
-                font-size: 18px;
-            }
-            .button {
-                padding: 6px 15px;
-                font-size: 14px;
-            }
-            .footer {
-                font-size: 10px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -172,16 +137,11 @@ pipeline {
         <div class="content">
             <h2>Featured Articles</h2>
             <ul>
-                <li><strong>Vertex AI: Supercharge Next-Gen App Development in 2025 Effortlessly</strong> - Discover how Vertex AI is revolutionizing app development with cutting-edge tools and frameworks. <a href="https://stabforge.com/vertex-ai-supercharge-next-gen-app-development-in-2025-effortlessly/">Read more</a></li>
-                <li><strong>Best AI Tools to Boost Productivity in 2025</strong> - Explore the top AI tools that can enhance your productivity and streamline workflows in the coming year. <a href="https://stabforge.com/best-ai-tools-to-boost-productivity-in-2025/">Read more</a></li>
-                <li><strong>Maven: The Effortless, Ultimate Guide for Java Developers in 2025</strong> - A comprehensive guide to mastering Maven for efficient Java development. <a href="https://stabforge.com/maven-the-effortless-ultimate-guide-for-java-developers-in-2025/">Read more</a></li>
-                <li><strong>Unlock the Power of Effective Communication: A 3-Step Roadmap to Success</strong> - Learn the essential steps to enhance your communication skills for personal and professional growth. <a href="https://stabforge.com/unlock-the-power-of-effective-communication-a-3-step-roadmap-to-success/">Read more</a></li>
+                <li><strong>Power of Exciting Large Language Models: Training, Fine-Tuning in 2025</strong> - Explore how large language models are reshaping technology, making tasks like text classification, document summarization, and content generation more efficient across industries. <a href="https://stabforge.com/power-of-exciting-large-language-models-training-fine-tuning-in-2025/">Read more</a></li>
+                <li><strong>Antardvand: More than just a story</strong> - Dive into the journey of creating 'Antardvand', a project that became more than just a film for its creators. <a href="https://stabforge.com/antardvand-more-than-just-a-story/">Read more</a></li>
+                <li><strong>PowerShell Operators: Supercharge with 10 Amazing Methods</strong> - Learn how to effectively utilize PowerShell operators to enhance your scripting capabilities. <a href="https://stabforge.com/powershell-operators-supercharge-with-10-amazing-methods/">Read more</a></li>
             </ul>
-          <img src="https://github.com/Stabforge/StabForge_Newsletter/blob/main/stabforge%20team/2.png?raw=true">
-          <img src="https://github.com/Stabforge/StabForge_Newsletter/blob/main/stabforge%20team/stabforge%20team.png?raw=true">
-          <img src="https://github.com/Stabforge/StabForge_Newsletter/blob/main/stabforge%20team/event%20post%20of%20richa.png?raw=true">
             <a href="https://stabforge.com" class="button" style="color: white;">Explore More on STABForge</a>
-          
             <p>Are you a blogger? Join our community! <a href="https://stabforge.com/register/" style="color: #0056b3; font-weight: bold;">Register Here</a></p>
         </div>
         <div class="footer">
@@ -194,6 +154,7 @@ pipeline {
     </div>
 </body>
 </html>
+
 
                                     """,
                                     mimeType: 'text/html'
