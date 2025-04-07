@@ -137,15 +137,15 @@ pipeline {
         <div class="content">
             <h2>Featured Articles</h2>
             <ul>
-                <li><strong>Power of Exciting Large Language Models: Training, Fine-Tuning in 2025</strong> - Explore how large language models are reshaping technology, making tasks like text classification, document summarization, and content generation more efficient across industries. <a href="https://stabforge.com/power-of-exciting-large-language-models-training-fine-tuning-in-2025/">Read more</a></li>
-                <li><strong>Antardvand: More than just a story</strong> - Dive into the journey of creating 'Antardvand', a project that became more than just a film for its creators. <a href="https://stabforge.com/antardvand-more-than-just-a-story/">Read more</a></li>
-                <li><strong>PowerShell Operators: Supercharge with 10 Amazing Methods</strong> - Learn how to effectively utilize PowerShell operators to enhance your scripting capabilities. <a href="https://stabforge.com/powershell-operators-supercharge-with-10-amazing-methods/">Read more</a></li>
+                <li><strong>Powerful Cloud Run Deployment: Dockerizing a Full-Stack Application for Seamless Scaling in 2025</strong> - Introduction Cloud Run makes it possible to scale and deploy containerized apps with ease without having to worry about infrastructure management. <a href="https://stabforge.com/powerful-cloud-run-deployment-dockerizing-a-full-stack-application-for-seamless-scaling-in-2025/">Read more</a></li>
+                <li><strong>Unlock Java Forms: Effortless Multi-Page Handling via Session & Required Validation</strong> - Introduction: In the world of Web Applications , Java Servlet is one of the best way to create a webapp. <a href="https://stabforge.com/java-forms-session-required-attribute/">Read more</a></li>
+                <li><strong>Quick & Easy Fix: Resolve XAMPP MySQL Shutdown Error in 8 Powerful Steps!</strong> - XAMPP is a popular development tool that allows users to run a local server for testing and development.  <a href="https://stabforge.com/quick-easy-fix-resolve-xampp-mysql-shutdown-error-in-8-powerful-steps/">Read more</a></li>
             </ul>
             <a href="https://stabforge.com" class="button" style="color: white;">Explore More on STABForge</a>
             <p>Are you a blogger? Join our community! <a href="https://stabforge.com/register/" style="color: #0056b3; font-weight: bold;">Register Here</a></p>
         </div>
         <div class="footer">
-            <p>STABForge.com (&copy; 2020)</p>
+            <p>STABForge.com (&copy; 2025)</p>
             <p>Stay connected: 
                 <a href="https://www.linkedin.com/company/stabforge-tech-blog">LinkedIn</a>
             </p>
